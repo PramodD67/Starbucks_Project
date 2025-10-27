@@ -1,0 +1,169 @@
+[0m23:29:41.974503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A6A2113A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A6CD011C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A6CD011F0>]}
+
+
+============================== 23:29:41.990305 | 61a3353b-ff76-4af5-8830-b35255d4c790 ==============================
+[0m23:29:41.990305 [info ] [MainThread]: Running with dbt=1.8.7
+[0m23:29:41.990305 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init Starbucks_dbt_project', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m23:29:43.551492 [debug] [MainThread]: Starter project path: e:\backup\users-admin files\downloads\starbucks_project\starbucks_dbt_pd_env\lib\site-packages\dbt\include\starter_project
+[0m23:29:43.612420 [info ] [MainThread]: 
+Your new dbt project "Starbucks_dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:29:43.612420 [info ] [MainThread]: Setting up your profile.
+[0m23:32:45.723552 [info ] [MainThread]: Profile Starbucks_dbt_project written to C:\Users\Admin\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:32:45.724115 [debug] [MainThread]: Command `dbt init` succeeded at 23:32:45.724115 after 183.81 seconds
+[0m23:32:45.724115 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A6A2113A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A6CDB9C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A6AB33490>]}
+[0m23:32:45.724115 [debug] [MainThread]: Flushing usage events
+[0m23:32:54.366450 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019DC7CB13D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019DC85C6FA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019DCA7B9940>]}
+
+
+============================== 23:32:54.366450 | 0d96edca-aaab-4c43-89ce-a3a445db5803 ==============================
+[0m23:32:54.366450 [info ] [MainThread]: Running with dbt=1.8.7
+[0m23:32:54.382078 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init Starbucks_dbt_project', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m23:32:54.399193 [info ] [MainThread]: A project called Starbucks_dbt_project already exists here.
+[0m23:32:54.401928 [debug] [MainThread]: Command `dbt init` succeeded at 23:32:54.401928 after 0.08 seconds
+[0m23:32:54.401928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019DC7CB13D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019DCA859C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019DC4491FD0>]}
+[0m23:32:54.401928 [debug] [MainThread]: Flushing usage events
+[0m23:36:55.732345 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029B346803D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029B37190FA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029B365E6490>]}
+
+
+============================== 23:36:55.777666 | d507f396-295a-4d1a-974b-493c37816abb ==============================
+[0m23:36:55.777666 [info ] [MainThread]: Running with dbt=1.8.7
+[0m23:36:55.777666 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:36:55.922168 [info ] [MainThread]: dbt version: 1.8.7
+[0m23:36:55.925694 [info ] [MainThread]: python version: 3.8.6
+[0m23:36:55.927031 [info ] [MainThread]: python path: e:\backup\users-admin files\downloads\starbucks_project\starbucks_dbt_pd_env\scripts\python.exe
+[0m23:36:55.927031 [info ] [MainThread]: os info: Windows-10-10.0.22000-SP0
+[0m23:36:57.680589 [info ] [MainThread]: Using profiles dir at C:\Users\Admin\.dbt
+[0m23:36:57.689143 [info ] [MainThread]: Using profiles.yml file at C:\Users\Admin\.dbt\profiles.yml
+[0m23:36:57.689239 [info ] [MainThread]: Using dbt_project.yml file at E:\BACKUP\users-admin files\Downloads\Starbucks_Project\dbt_project.yml
+[0m23:36:57.690348 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m23:36:57.690348 [debug] [MainThread]: Command `dbt debug` failed at 23:36:57.690348 after 2.07 seconds
+[0m23:36:57.690348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029B346803D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029B37EBFA30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029B3704A4F0>]}
+[0m23:36:57.690348 [debug] [MainThread]: Flushing usage events
+[0m00:56:40.475780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9AD2A4160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9AFD6A5B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9AF3D52B0>]}
+
+
+============================== 00:56:40.506570 | 43a23f0a-1285-40f3-8a45-e0ae23aaf42e ==============================
+[0m00:56:40.506570 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:56:40.507064 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:56:40.507064 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path e:\BACKUP\users-admin files\Downloads\Starbucks_Project\Starbucks_dbt_project\dbt_internal_packages\dbt-adapters\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:56:40.507064 [debug] [MainThread]: Command `cli deps` failed at 00:56:40.507064 after 0.17 seconds
+[0m00:56:40.507064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9AD2A4160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9AFF098E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9AFF09E20>]}
+[0m00:56:40.507064 [debug] [MainThread]: Flushing usage events
+[0m00:56:40.433419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AF72FEE160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AF75AB95B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AF7511A2B0>]}
+
+
+============================== 00:56:40.569180 | 84f1d975-4b45-4d1b-b9cb-561c1ac6c594 ==============================
+[0m00:56:40.569180 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:56:40.569180 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:56:40.569180 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path e:\BACKUP\users-admin files\Downloads\Starbucks_Project\Starbucks_dbt_project\dbt_internal_packages\dbt-adapters\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:56:40.569180 [debug] [MainThread]: Command `cli deps` failed at 00:56:40.569180 after 0.68 seconds
+[0m00:56:40.569180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AF72FEE160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AF75C5A8E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AF75C5AE20>]}
+[0m00:56:40.569180 [debug] [MainThread]: Flushing usage events
+[0m00:56:40.719271 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0E861F340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0EA764100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0EB168E80>]}
+
+
+============================== 00:56:40.741490 | 820286a3-62da-4251-a5db-58fd4e38c4bf ==============================
+[0m00:56:40.741490 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:56:40.741986 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'True'}
+[0m00:56:40.741986 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path e:\BACKUP\users-admin files\Downloads\Starbucks_Project\Starbucks_dbt_project\dbt_internal_packages\dbt-adapters\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:56:40.741986 [debug] [MainThread]: Command `cli deps` failed at 00:56:40.741986 after 0.15 seconds
+[0m00:56:40.741986 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0E861F340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0EB266D00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0EB2664F0>]}
+[0m00:56:40.741986 [debug] [MainThread]: Flushing usage events
+[0m00:56:41.141561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBA2EA9190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBA5B1FAF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBA5B1F970>]}
+
+
+============================== 00:56:41.158415 | 3f5c1af7-be10-407b-9622-498c043eecc4 ==============================
+[0m00:56:41.158415 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:56:41.158911 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m00:56:41.158911 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path e:\BACKUP\users-admin files\Downloads\Starbucks_Project\Starbucks_dbt_project\dbt_internal_packages\dbt-adapters\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:56:41.158911 [debug] [MainThread]: Command `cli deps` failed at 00:56:41.158911 after 0.45 seconds
+[0m00:56:41.158911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBA2EA9190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBA5B0B580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DBA5B0B220>]}
+[0m00:56:41.158911 [debug] [MainThread]: Flushing usage events
+[0m00:56:41.756703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E90A30F340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E90C454100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E90CE58E80>]}
+
+
+============================== 00:56:41.756703 | e336007a-82f8-4bf2-abcd-229d6ff79b3f ==============================
+[0m00:56:41.756703 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:56:41.756703 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m00:56:41.756703 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path e:\BACKUP\users-admin files\Downloads\Starbucks_Project\Starbucks_dbt_project\dbt_internal_packages\dbt-adapters\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:56:41.756703 [debug] [MainThread]: Command `cli deps` failed at 00:56:41.756703 after 0.23 seconds
+[0m00:56:41.772844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E90A30F340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E90CF56D00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E90CF564F0>]}
+[0m00:56:41.772844 [debug] [MainThread]: Flushing usage events
+[0m00:56:41.855562 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E6AD6761C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E6B02EFAC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E6B02EFA00>]}
+
+
+============================== 00:56:41.862660 | 5c24bf7f-42e5-4cf9-85d1-4dc0b2ffe10a ==============================
+[0m00:56:41.862660 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:56:41.867848 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'True'}
+[0m00:56:41.867848 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path e:\BACKUP\users-admin files\Downloads\Starbucks_Project\Starbucks_dbt_project\dbt_internal_packages\dbt-adapters\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:56:41.867848 [debug] [MainThread]: Command `cli deps` failed at 00:56:41.867848 after 0.19 seconds
+[0m00:56:41.867848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E6AD6761C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E6B02B5CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E6B02B5400>]}
+[0m00:56:41.867848 [debug] [MainThread]: Flushing usage events
+[0m00:56:59.978996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230BE05F160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C0B295B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C01982B0>]}
+
+
+============================== 00:56:59.994386 | adc841dc-3bde-41c7-b768-b1fb94d1646c ==============================
+[0m00:56:59.994386 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:57:00.001455 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt ', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m00:57:00.004126 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path e:\BACKUP\users-admin files\Downloads\Starbucks_Project\Starbucks_dbt_project\dbt_internal_packages\dbt-adapters\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:57:00.007643 [debug] [MainThread]: Command `cli deps` failed at 00:57:00.007148 after 0.73 seconds
+[0m00:57:00.008870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230BE05F160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C0CCB8E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C0CCBE20>]}
+[0m00:57:00.009401 [debug] [MainThread]: Flushing usage events
+[0m00:57:00.450500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001564A98E3A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001564CAC6250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001564D44DFD0>]}
+
+
+============================== 00:57:00.469274 | 9aad1f08-73bb-4bba-b165-dc6788fe81cc ==============================
+[0m00:57:00.469274 [info ] [MainThread]: Running with dbt=1.8.7
+[0m00:57:00.470714 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt ', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:57:00.473224 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path e:\BACKUP\users-admin files\Downloads\Starbucks_Project\Starbucks_dbt_project\dbt_internal_packages\dbt-adapters\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:57:00.474364 [debug] [MainThread]: Command `cli deps` failed at 00:57:00.474364 after 0.20 seconds
+[0m00:57:00.474364 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001564A98E3A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001564D610D00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001564D5D7CD0>]}
+[0m00:57:00.474364 [debug] [MainThread]: Flushing usage events

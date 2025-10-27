@@ -1,0 +1,177 @@
+merge into "Customers_tbl" as t
+using ( 
+    
+select
+"id",
+COALESCE("Customer_name", 'NA') AS "Customer_name",
+COALESCE(
+    REGEXP_REPLACE(
+        REGEXP_REPLACE("Phone_Number", '[^0-9]', ''), 
+        '(\\d{3})(\\d{4})', 
+        '\\1-\\2'
+    ),
+    '000-0000'
+) AS "Phone_Number"
+,
+COALESCE("Address",'NA') as "Address"
+from STARBUCKS_DB.SDL_SC."CUSTOMERS_TBL" )as s
+on t."id"=s."id" 
+
+WHEN MATCHED THEN UPDATE ALL BY NAME
+WHEN NOT MATCHED THEN INSERT ALL BY NAME;
+
+desc table "Products_tbl";
+
+desc table STARBUCKS_DB.SDL_SC.products_tbl;
+
+desc table  STARBUCKS_DB.SDL_SC.CUSTOMERS_TBL;
+select * from STARBUCKS_DB.SDL_SC.products_tbl;
+select * from "Products_tbl";
+--------------------------------------------
+
+
+Merge into "Products_tbl" as t
+using ( select
+"id", 
+coalesce("Product_name", 'NA') AS "Product_name",
+"Description",
+coalesce("category", 'NA') AS "category" ,
+coalesce(regexp_replace(split_part(to_char("Price"),'.',1),'[^0-9]', '')
+||'.' || split_part(to_char("Price"),'.',2), 00.00)  as "Price"
+
+from STARBUCKS_DB.SDL_SC.products_tbl 
+)  as s
+
+on t."id" = s."id"
+
+WHEN MATCHED THEN UPDATE ALL BY NAME
+
+WHEN NOT MATCHED THEN INSERT ALL BY NAME;
+------------------------------------------------------
+
+
+desc table "Orders_tbl" ;
+
+alter table "Orders_tbl" add column  "orders_total" float;
+
+
+desc table STARBUCKS_DB.SDL_SC.orders_tbl;
+
+select "id|Customer_id|Order_date|Order_status|orders_total" from STARBUCKS_DB.SDL_SC.orders_tbl;
+
+Merge into "Orders_tbl" as t
+using ( select
+
+    SPLIT_PART("id|Customer_id|Order_date|Order_status|orders_total", '|', 1)::INT AS "id",
+    SPLIT_PART("id|Customer_id|Order_date|Order_status|orders_total", '|', 2)::INT AS "Customer_id",
+
+   trim(coalesce(nullif( SPLIT_PART("id|Customer_id|Order_date|Order_status|orders_total", '|', 3), '') 
+   ,'2999-12-31 00:00:00'))::timestamp AS "Order_date",
+    
+    SPLIT_PART("id|Customer_id|Order_date|Order_status|orders_total", '|', 4) AS "Order_status",
+    REGEXP_REPLACE(split_part(split_part("id|Customer_id|Order_date|Order_status|orders_total", '|', 5),'.',1), '[^0-9]','') || '.' || split_part(split_part("id|Customer_id|Order_date|Order_status|orders_total", '|', 5),'.',2) AS "orders_total"
+
+from STARBUCKS_DB.SDL_SC.orders_tbl )
+  as s
+
+on t."id" = s."id"
+
+WHEN MATCHED THEN UPDATE ALL BY NAME
+
+WHEN NOT MATCHED THEN INSERT ALL BY NAME;
+----------------------------------------------
+
+desc table "Inventory_tbl";
+Merge into "Inventory_tbl" as t
+using ( select
+
+"id",
+"Product_id",
+"Current_stock",
+coalesce("Re-order_level",0) as "Re-order_level",
+
+from STARBUCKS_DB.SDL_SC.Inventory_tbl 
+)  as s
+
+on t."id" = s."id"
+
+WHEN MATCHED THEN UPDATE ALL BY NAME
+
+WHEN NOT MATCHED THEN INSERT ALL BY NAME;
+----------------------------------------------------------
+
+desc table "Loyalty_tbl";
+Merge into "Loyalty_tbl" as t
+using ( select
+
+"id",
+"Customer_id",
+"Order_id",
+"Loyalty_Points"
+
+from STARBUCKS_DB.SDL_SC.Loyalty_tbl 
+)  as s
+
+on t."id" = s."id"
+
+WHEN MATCHED THEN UPDATE ALL BY NAME
+
+WHEN NOT MATCHED THEN INSERT ALL BY NAME;
+-----------------------------------------------
+
+
+
+Merge into "Order_items_tbl" as t
+using ( select
+"id",
+"Order_id",
+"Product_id",
+coalesce("Quantity", 0) as "Quantity",
+"Customization_id"
+
+from STARBUCKS_DB.SDL_SC.Order_items_tbl 
+)  as s
+
+on t."id" = s."id"
+
+WHEN MATCHED THEN UPDATE ALL BY NAME
+
+WHEN NOT MATCHED THEN INSERT ALL BY NAME;
+-----------------------------------------------
+
+desc table "Customization_tbl";
+
+
+Merge into "Customization_tbl" as t
+using ( select
+"id",
+"Milk_Type",
+"Size",
+"Add-ins",
+"Product_id",
+"Customer_id"
+
+from STARBUCKS_DB.SDL_SC.Customization_tbl 
+)  as s
+
+on t."id" = s."id"
+
+WHEN MATCHED THEN UPDATE ALL BY NAME
+
+WHEN NOT MATCHED THEN INSERT ALL BY NAME;
+--------------------------------------
+
+
+----TRANSFORMATIONS APPLIED---------
+
+-- ✅ Summary of Common Transformation Patterns
+-- NULL Handling: COALESCE(column, default) used in most tables.
+-- String Cleaning / Formatting:
+-- REGEXP_REPLACE to remove unwanted characters.
+-- SPLIT_PART to parse string fields.
+-- trim to remove extra whitespace.
+-- Type Casting:  -- ::INT or ::timestamp for proper typing.
+-- Default Values:
+-- orders_total → default numeric formatting.
+-- Order_date → default timestamp.
+-- Phone Formatting: special regex to format as XXX-XXXX.

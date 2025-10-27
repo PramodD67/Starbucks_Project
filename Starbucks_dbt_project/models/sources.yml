@@ -1,0 +1,29 @@
+sources:
+  - name: BDL_Source
+    database: STARBUCKS_DB
+    schema: BDL_SC
+    tables:
+      - name: Customers_tbl
+        quoting:
+          identifier: true
+      - name: Customization_tbl
+        quoting:
+          identifier: true
+      - name: Inventory_tbl
+        quoting:
+          identifier: true
+      - name: Loyalty_tbl
+        quoting:
+          identifier: true
+      - name: Order_items_tbl
+        quoting:
+          identifier: true
+      - name: Orders_tbl
+        quoting:
+          identifier: true
+      - name: Products_tbl
+        quoting:
+          identifier: true
+
+
+

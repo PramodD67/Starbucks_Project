@@ -1,0 +1,74 @@
+
+---Lets build STAR SCHEMA----
+
+create table Customers_dim(
+customer_sk NUMBER IDENTITY(1,1) PRIMARY KEY,
+customer_id NUMBER,
+name varchar,
+phone_number varchar,
+address varchar,
+loyalty_points number,
+loyalty_id number
+
+
+);
+
+create table Customization_dim(
+customization_sk NUMBER IDENTITY(1,1) PRIMARY KEY,
+customization_id number,
+milk_type varchar,
+size varchar,
+Add_ins varchar
+
+);
+
+create table Orders_dim(
+order_sk NUMBER IDENTITY(1,1) PRIMARY KEY,
+order_id number,
+order_status varchar,
+order_date timestamp,
+quantity number
+);
+
+create table Products_dim(
+product_sk NUMBER IDENTITY(1,1) PRIMARY KEY,
+product_id number,
+product_name varchar,
+description varchar,
+category varchar,
+price number
+
+);
+
+create table Inventory_dim(
+    inventory_sk NUMBER IDENTITY(1,1) PRIMARY KEY,
+    inventory_id number,
+    current_stock number,
+    re_order_level number
+);
+
+create table Date_dim(
+    order_date_id number,
+    date_sk NUMBER IDENTITY(1,1) PRIMARY KEY,
+    full_date date,
+    day_of_week varchar,
+    month varchar,
+    year varchar
+);
+
+
+
+create table Starbucks_Fact (
+    starbucks_fact_id NUMBER IDENTITY(1,1) PRIMARY KEY,
+    order_sk number NOT NULL REFERENCES Orders_dim (order_sk),
+    customer_sk number NOT NULL REFERENCES Customers_dim (customer_sk),
+    product_sk number NOT NULL REFERENCES Products_dim (product_sk),
+    customization_sk number NOT NULL REFERENCES Customization_dim (customization_sk),
+    inventory_sk number NOT NULL REFERENCES Inventory_dim (inventory_sk),
+    quantity number,
+    date_sk number NOT NULL REFERENCES Date_dim (date_sk),
+    line_item_amount number
+);
+
+
+------------------------------------------

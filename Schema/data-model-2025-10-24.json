@@ -1,0 +1,1182 @@
+{
+  "tables": [
+    {
+      "id": "table-id-1761230903517-0zl8ex1to",
+      "name": "Orders_tbl",
+      "fields": [
+        {
+          "id": "field-id-1761230903517-6x9uckvsa",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1761231053631",
+          "name": "Customer_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761231124720-zc9af5ckn",
+            "fieldId": "field-id-1761231124720-j8h7e36ao"
+          }
+        },
+        {
+          "id": "field-1761231542030",
+          "name": "Order_date",
+          "type": "TIMESTAMP",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761233000500",
+          "name": "Order_status",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761236493084",
+          "name": "orders_total",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1761231124720-zc9af5ckn",
+      "name": "Customers_tbl",
+      "fields": [
+        {
+          "id": "field-id-1761231124720-j8h7e36ao",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1761231186306",
+          "name": "Customer_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761231206075",
+          "name": "Phone_Number",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761231212500",
+          "name": "Address",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1761231314026-ftch01d95",
+      "name": "Products_tbl",
+      "fields": [
+        {
+          "id": "field-id-1761231314026-tk53j3oqu",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1761231332242",
+          "name": "Product_name",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761231348463",
+          "name": "Description",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761231365009",
+          "name": "category",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761233452365",
+          "name": "Price",
+          "type": "DECIMAL",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1761231640376-lzqsl7nhz",
+      "name": "Loyalty_tbl",
+      "fields": [
+        {
+          "id": "field-id-1761231640376-gmt9kna6p",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1761231663584",
+          "name": "Customer_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761230903517-0zl8ex1to",
+            "fieldId": "field-1761231053631"
+          }
+        },
+        {
+          "id": "field-1761231682770",
+          "name": "Order_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761230903517-0zl8ex1to",
+            "fieldId": "field-id-1761230903517-6x9uckvsa"
+          }
+        },
+        {
+          "id": "field-1761231696096",
+          "name": "Loyalty_Points",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        }
+      ]
+    },
+    {
+      "id": "table-id-1761232610057-6wmhb7ohk",
+      "name": "Customization_tbl",
+      "fields": [
+        {
+          "id": "field-id-1761232610057-dskkcc2ie",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1761232638807",
+          "name": "Milk_Type",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761232647437",
+          "name": "Size",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761232657802",
+          "name": "Add-ins",
+          "type": "VARCHAR(255)",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761232666894",
+          "name": "Product_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761231314026-ftch01d95",
+            "fieldId": "field-id-1761231314026-tk53j3oqu"
+          }
+        },
+        {
+          "id": "field-1761232690733",
+          "name": "Customer_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761231124720-zc9af5ckn",
+            "fieldId": "field-id-1761231124720-j8h7e36ao"
+          }
+        }
+      ]
+    },
+    {
+      "id": "table-id-1761233487487-cylz9g3t1",
+      "name": "Order_items",
+      "fields": [
+        {
+          "id": "field-id-1761233487487-p6dg3yjyi",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1761233532871",
+          "name": "Order_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761230903517-0zl8ex1to",
+            "fieldId": "field-id-1761230903517-6x9uckvsa"
+          }
+        },
+        {
+          "id": "field-1761233550599",
+          "name": "Product_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761231314026-ftch01d95",
+            "fieldId": "field-id-1761231314026-tk53j3oqu"
+          }
+        },
+        {
+          "id": "field-1761233563163",
+          "name": "Quantity",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761236195361",
+          "name": "Customization_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761232610057-6wmhb7ohk",
+            "fieldId": "field-id-1761232610057-dskkcc2ie"
+          }
+        }
+      ]
+    },
+    {
+      "id": "table-id-1761233952665-ou2wt472u",
+      "name": "Inventory_tbl",
+      "fields": [
+        {
+          "id": "field-id-1761233952665-ll8j46uvs",
+          "name": "id",
+          "type": "INT",
+          "isPrimary": true,
+          "isNullable": false,
+          "isUnique": true
+        },
+        {
+          "id": "field-1761233975715",
+          "name": "Product_id",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false,
+          "foreignKey": {
+            "tableId": "table-id-1761231314026-ftch01d95",
+            "fieldId": "field-id-1761231314026-tk53j3oqu"
+          }
+        },
+        {
+          "id": "field-1761233987624",
+          "name": "Current_stock",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": true,
+          "isUnique": false
+        },
+        {
+          "id": "field-1761234011961",
+          "name": "Re-order_level",
+          "type": "INT",
+          "isPrimary": false,
+          "isNullable": false,
+          "isUnique": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "id-1761231285354-zyw7lkngn",
+      "name": "Customers_tbl.id → Orders_tbl.Customer_id",
+      "sourceTableId": "table-id-1761231124720-zc9af5ckn",
+      "sourceFieldId": "field-id-1761231124720-j8h7e36ao",
+      "targetTableId": "table-id-1761230903517-0zl8ex1to",
+      "targetFieldId": "field-1761231053631",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1761232309417-izq8tinif",
+      "name": "Orders_tbl.Customer_id → Loyalty_tbl.Customer_id",
+      "sourceTableId": "table-id-1761231124720-zc9af5ckn",
+      "sourceFieldId": "field-id-1761231124720-j8h7e36ao",
+      "targetTableId": "table-id-1761231640376-lzqsl7nhz",
+      "targetFieldId": "field-1761231663584",
+      "type": "many-to-many"
+    },
+    {
+      "id": "id-1761232805587-80205bvff",
+      "name": "Products_tbl.id → Customization_tbl.Product_id",
+      "sourceTableId": "table-id-1761231314026-ftch01d95",
+      "sourceFieldId": "field-id-1761231314026-tk53j3oqu",
+      "targetTableId": "table-id-1761232610057-6wmhb7ohk",
+      "targetFieldId": "field-1761232666894",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1761233679404-lfuyduo52",
+      "name": "Orders_tbl.id → Order_items.Order_id",
+      "sourceTableId": "table-id-1761230903517-0zl8ex1to",
+      "sourceFieldId": "field-id-1761230903517-6x9uckvsa",
+      "targetTableId": "table-id-1761233487487-cylz9g3t1",
+      "targetFieldId": "field-1761233532871",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1761233712065-ihkn066t2",
+      "name": "Products_tbl.id → Order_items.Product_id",
+      "sourceTableId": "table-id-1761231314026-ftch01d95",
+      "sourceFieldId": "field-id-1761231314026-tk53j3oqu",
+      "targetTableId": "table-id-1761233487487-cylz9g3t1",
+      "targetFieldId": "field-1761233550599",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1761233836596-1zto7jv8g",
+      "name": "Orders_tbl.id → Loyalty_tbl.Order_id",
+      "sourceTableId": "table-id-1761230903517-0zl8ex1to",
+      "sourceFieldId": "field-id-1761230903517-6x9uckvsa",
+      "targetTableId": "table-id-1761231640376-lzqsl7nhz",
+      "targetFieldId": "field-1761231682770",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1761234088987-stbdorydo",
+      "name": "Inventory_tbl.Product_id → Products_tbl.id",
+      "sourceTableId": "table-id-1761233952665-ou2wt472u",
+      "sourceFieldId": "field-1761233975715",
+      "targetTableId": "table-id-1761231314026-ftch01d95",
+      "targetFieldId": "field-id-1761231314026-tk53j3oqu",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1761234471741-k43673sb3",
+      "name": "Customers_tbl.id → Customization_tbl.Customer_id",
+      "sourceTableId": "table-id-1761231124720-zc9af5ckn",
+      "sourceFieldId": "field-id-1761231124720-j8h7e36ao",
+      "targetTableId": "table-id-1761232610057-6wmhb7ohk",
+      "targetFieldId": "field-1761232690733",
+      "type": "one-to-many"
+    },
+    {
+      "id": "id-1761236230211-zpuj100dv",
+      "name": "Customization_tbl.id → Order_items.Customization_id",
+      "sourceTableId": "table-id-1761232610057-6wmhb7ohk",
+      "sourceFieldId": "field-id-1761232610057-dskkcc2ie",
+      "targetTableId": "table-id-1761233487487-cylz9g3t1",
+      "targetFieldId": "field-1761236195361",
+      "type": "one-to-many"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "table-id-1761230903517-0zl8ex1to",
+      "type": "tableNode",
+      "position": {
+        "x": 440,
+        "y": -920
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1761230903517-0zl8ex1to",
+          "name": "Orders_tbl",
+          "fields": [
+            {
+              "id": "field-id-1761230903517-6x9uckvsa",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1761231053631",
+              "name": "Customer_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1761231124720-zc9af5ckn",
+                "fieldId": "field-id-1761231124720-j8h7e36ao"
+              }
+            },
+            {
+              "id": "field-1761231542030",
+              "name": "Order_date",
+              "type": "TIMESTAMP",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761233000500",
+              "name": "Order_status",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761236493084",
+              "name": "orders_total",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 280,
+      "height": 324,
+      "selected": true,
+      "positionAbsolute": {
+        "x": 440,
+        "y": -920
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1761231124720-zc9af5ckn",
+      "type": "tableNode",
+      "position": {
+        "x": 200,
+        "y": -240
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1761231124720-zc9af5ckn",
+          "name": "Customers_tbl",
+          "fields": [
+            {
+              "id": "field-id-1761231124720-j8h7e36ao",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1761231186306",
+              "name": "Customer_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761231206075",
+              "name": "Phone_Number",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761231212500",
+              "name": "Address",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 280,
+      "height": 271,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 200,
+        "y": -240
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1761231314026-ftch01d95",
+      "type": "tableNode",
+      "position": {
+        "x": 580,
+        "y": -520
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1761231314026-ftch01d95",
+          "name": "Products_tbl",
+          "fields": [
+            {
+              "id": "field-id-1761231314026-tk53j3oqu",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1761231332242",
+              "name": "Product_name",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761231348463",
+              "name": "Description",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761231365009",
+              "name": "category",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761233452365",
+              "name": "Price",
+              "type": "DECIMAL",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 280,
+      "height": 324,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 580,
+        "y": -520
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1761231640376-lzqsl7nhz",
+      "type": "tableNode",
+      "position": {
+        "x": -140,
+        "y": -840
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1761231640376-lzqsl7nhz",
+          "name": "Loyalty_tbl",
+          "fields": [
+            {
+              "id": "field-id-1761231640376-gmt9kna6p",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1761231663584",
+              "name": "Customer_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1761230903517-0zl8ex1to",
+                "fieldId": "field-1761231053631"
+              }
+            },
+            {
+              "id": "field-1761231682770",
+              "name": "Order_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1761230903517-0zl8ex1to",
+                "fieldId": "field-1761232117624"
+              }
+            },
+            {
+              "id": "field-1761231696096",
+              "name": "Loyalty_Points",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 280,
+      "height": 271,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -140,
+        "y": -840
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1761232610057-6wmhb7ohk",
+      "type": "tableNode",
+      "position": {
+        "x": 1160,
+        "y": -360
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1761232610057-6wmhb7ohk",
+          "name": "Customization_tbl",
+          "fields": [
+            {
+              "id": "field-id-1761232610057-dskkcc2ie",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1761232638807",
+              "name": "Milk_Type",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761232647437",
+              "name": "Size",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761232657802",
+              "name": "Add-ins",
+              "type": "VARCHAR(255)",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761232666894",
+              "name": "Product_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761232690733",
+              "name": "Customer_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 280,
+      "height": 376,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1160,
+        "y": -360
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1761233487487-cylz9g3t1",
+      "type": "tableNode",
+      "position": {
+        "x": 1200,
+        "y": -780
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1761233487487-cylz9g3t1",
+          "name": "Order_items",
+          "fields": [
+            {
+              "id": "field-id-1761233487487-p6dg3yjyi",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1761233532871",
+              "name": "Order_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1761230903517-0zl8ex1to",
+                "fieldId": "field-id-1761230903517-6x9uckvsa"
+              }
+            },
+            {
+              "id": "field-1761233550599",
+              "name": "Product_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1761231314026-ftch01d95",
+                "fieldId": "field-id-1761231314026-tk53j3oqu"
+              }
+            },
+            {
+              "id": "field-1761233563163",
+              "name": "Quantity",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761236195361",
+              "name": "Customization_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1761232610057-6wmhb7ohk",
+                "fieldId": "field-id-1761232610057-dskkcc2ie"
+              }
+            }
+          ]
+        }
+      },
+      "width": 280,
+      "height": 324,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1200,
+        "y": -780
+      },
+      "dragging": false
+    },
+    {
+      "id": "table-id-1761233952665-ou2wt472u",
+      "type": "tableNode",
+      "position": {
+        "x": -220,
+        "y": -400
+      },
+      "data": {
+        "table": {
+          "id": "table-id-1761233952665-ou2wt472u",
+          "name": "Inventory_tbl",
+          "fields": [
+            {
+              "id": "field-id-1761233952665-ll8j46uvs",
+              "name": "id",
+              "type": "INT",
+              "isPrimary": true,
+              "isNullable": false,
+              "isUnique": true
+            },
+            {
+              "id": "field-1761233975715",
+              "name": "Product_id",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false,
+              "foreignKey": {
+                "tableId": "table-id-1761231314026-ftch01d95",
+                "fieldId": "field-id-1761231314026-tk53j3oqu"
+              }
+            },
+            {
+              "id": "field-1761233987624",
+              "name": "Current_stock",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": true,
+              "isUnique": false
+            },
+            {
+              "id": "field-1761234011961",
+              "name": "Re-order_level",
+              "type": "INT",
+              "isPrimary": false,
+              "isNullable": false,
+              "isUnique": false
+            }
+          ]
+        }
+      },
+      "width": 280,
+      "height": 271,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -220,
+        "y": -400
+      },
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761231124720-zc9af5ckn",
+      "sourceHandle": "field-id-1761231124720-j8h7e36ao-source",
+      "target": "table-id-1761230903517-0zl8ex1to",
+      "targetHandle": "field-1761231053631-target",
+      "id": "edge-id-1761231285354-zyw7lkngn",
+      "data": {
+        "relationship": {
+          "id": "id-1761231285354-zyw7lkngn",
+          "name": "Customers_tbl.id → Orders_tbl.Customer_id",
+          "sourceTableId": "table-id-1761231124720-zc9af5ckn",
+          "sourceFieldId": "field-id-1761231124720-j8h7e36ao",
+          "targetTableId": "table-id-1761230903517-0zl8ex1to",
+          "targetFieldId": "field-1761231053631",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761231124720-zc9af5ckn",
+      "sourceHandle": "field-id-1761231124720-j8h7e36ao-source",
+      "target": "table-id-1761231640376-lzqsl7nhz",
+      "targetHandle": "field-1761231663584-target",
+      "id": "edge-id-1761232309417-izq8tinif",
+      "data": {
+        "relationship": {
+          "id": "id-1761232309417-izq8tinif",
+          "name": "Orders_tbl.Customer_id → Loyalty_tbl.Customer_id",
+          "sourceTableId": "table-id-1761231124720-zc9af5ckn",
+          "sourceFieldId": "field-id-1761231124720-j8h7e36ao",
+          "targetTableId": "table-id-1761231640376-lzqsl7nhz",
+          "targetFieldId": "field-1761231663584",
+          "type": "many-to-many"
+        }
+      },
+      "selected": false
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761231314026-ftch01d95",
+      "sourceHandle": "field-id-1761231314026-tk53j3oqu-source",
+      "target": "table-id-1761232610057-6wmhb7ohk",
+      "targetHandle": "field-1761232666894-target",
+      "id": "edge-id-1761232805587-80205bvff",
+      "data": {
+        "relationship": {
+          "id": "id-1761232805587-80205bvff",
+          "name": "Products_tbl.id → Customization_tbl.Product_id",
+          "sourceTableId": "table-id-1761231314026-ftch01d95",
+          "sourceFieldId": "field-id-1761231314026-tk53j3oqu",
+          "targetTableId": "table-id-1761232610057-6wmhb7ohk",
+          "targetFieldId": "field-1761232666894",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761230903517-0zl8ex1to",
+      "sourceHandle": "field-id-1761230903517-6x9uckvsa-source",
+      "target": "table-id-1761233487487-cylz9g3t1",
+      "targetHandle": "field-1761233532871-target",
+      "id": "edge-id-1761233679404-lfuyduo52",
+      "data": {
+        "relationship": {
+          "id": "id-1761233679404-lfuyduo52",
+          "name": "Orders_tbl.id → Order_items.Order_id",
+          "sourceTableId": "table-id-1761230903517-0zl8ex1to",
+          "sourceFieldId": "field-id-1761230903517-6x9uckvsa",
+          "targetTableId": "table-id-1761233487487-cylz9g3t1",
+          "targetFieldId": "field-1761233532871",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761231314026-ftch01d95",
+      "sourceHandle": "field-id-1761231314026-tk53j3oqu-source",
+      "target": "table-id-1761233487487-cylz9g3t1",
+      "targetHandle": "field-1761233550599-target",
+      "id": "edge-id-1761233712065-ihkn066t2",
+      "data": {
+        "relationship": {
+          "id": "id-1761233712065-ihkn066t2",
+          "name": "Products_tbl.id → Order_items.Product_id",
+          "sourceTableId": "table-id-1761231314026-ftch01d95",
+          "sourceFieldId": "field-id-1761231314026-tk53j3oqu",
+          "targetTableId": "table-id-1761233487487-cylz9g3t1",
+          "targetFieldId": "field-1761233550599",
+          "type": "one-to-many"
+        }
+      },
+      "selected": false
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761230903517-0zl8ex1to",
+      "sourceHandle": "field-id-1761230903517-6x9uckvsa-source",
+      "target": "table-id-1761231640376-lzqsl7nhz",
+      "targetHandle": "field-1761231682770-target",
+      "id": "edge-id-1761233836596-1zto7jv8g",
+      "data": {
+        "relationship": {
+          "id": "id-1761233836596-1zto7jv8g",
+          "name": "Orders_tbl.id → Loyalty_tbl.Order_id",
+          "sourceTableId": "table-id-1761230903517-0zl8ex1to",
+          "sourceFieldId": "field-id-1761230903517-6x9uckvsa",
+          "targetTableId": "table-id-1761231640376-lzqsl7nhz",
+          "targetFieldId": "field-1761231682770",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      },
+      "selected": false
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761233952665-ou2wt472u",
+      "sourceHandle": "field-1761233975715-source",
+      "target": "table-id-1761231314026-ftch01d95",
+      "targetHandle": "field-id-1761231314026-tk53j3oqu-target",
+      "id": "edge-id-1761234088987-stbdorydo",
+      "data": {
+        "relationship": {
+          "id": "id-1761234088987-stbdorydo",
+          "name": "Inventory_tbl.Product_id → Products_tbl.id",
+          "sourceTableId": "table-id-1761233952665-ou2wt472u",
+          "sourceFieldId": "field-1761233975715",
+          "targetTableId": "table-id-1761231314026-ftch01d95",
+          "targetFieldId": "field-id-1761231314026-tk53j3oqu",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761231124720-zc9af5ckn",
+      "sourceHandle": "field-id-1761231124720-j8h7e36ao-source",
+      "target": "table-id-1761232610057-6wmhb7ohk",
+      "targetHandle": "field-1761232690733-target",
+      "id": "edge-id-1761234471741-k43673sb3",
+      "data": {
+        "relationship": {
+          "id": "id-1761234471741-k43673sb3",
+          "name": "Customers_tbl.id → Customization_tbl.Customer_id",
+          "sourceTableId": "table-id-1761231124720-zc9af5ckn",
+          "sourceFieldId": "field-id-1761231124720-j8h7e36ao",
+          "targetTableId": "table-id-1761232610057-6wmhb7ohk",
+          "targetFieldId": "field-1761232690733",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    },
+    {
+      "type": "relationship",
+      "animated": false,
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "#2563EB"
+      },
+      "markerEnd": {
+        "type": "arrowclosed",
+        "width": 12,
+        "height": 12,
+        "color": "#2563EB"
+      },
+      "source": "table-id-1761232610057-6wmhb7ohk",
+      "sourceHandle": "field-id-1761232610057-dskkcc2ie-source",
+      "target": "table-id-1761233487487-cylz9g3t1",
+      "targetHandle": "field-1761236195361-target",
+      "id": "edge-id-1761236230211-zpuj100dv",
+      "data": {
+        "relationship": {
+          "id": "id-1761236230211-zpuj100dv",
+          "name": "Customization_tbl.id → Order_items.Customization_id",
+          "sourceTableId": "table-id-1761232610057-6wmhb7ohk",
+          "sourceFieldId": "field-id-1761232610057-dskkcc2ie",
+          "targetTableId": "table-id-1761233487487-cylz9g3t1",
+          "targetFieldId": "field-1761236195361",
+          "type": "one-to-many"
+        },
+        "showCardinality": true,
+        "showRelationshipText": true
+      }
+    }
+  ],
+  "timestamp": 1761311702343,
+  "version": "1.0"
+}
