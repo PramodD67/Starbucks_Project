@@ -1,7 +1,7 @@
 create or replace storage integration s3_sti
 type=External_stage
 enabled=true
-storage_provider=s3
+storage_provider='s3'
 storage_aws_role_arn='arn:aws:iam::277707120370:role/Starbucks_role'
 storage_allowed_locations=('s3://starbucks-analysis-buck/');
 
@@ -161,3 +161,17 @@ match_by_column_name=case_insensitive;
 desc table customers_tbl;
 
 select * from customers_tbl;
+----------------------------------------
+
+Create pipe customers_pipe 
+auto_ingest=true
+as 
+copy into customers_tbl 
+from @ext_stg/Customers/
+file_format=(format_name='csvff')
+match_by_column_name=case_insensitive;
+
+
+
+show pipes;
+desc pipe CUSTOMERS_PIPE;

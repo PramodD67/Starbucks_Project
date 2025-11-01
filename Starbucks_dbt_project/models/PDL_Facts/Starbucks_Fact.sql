@@ -33,24 +33,3 @@ select
 
 
 
-
-   -- inventory_sk number NOT NULL REFERENCES Inventory_dim (inventory_sk),
-    --quantity number,
-
-
-
-
-
-
-
-
-
-    -- from {{ref('Customer_Dim_Mdl')}} c
-    --  join {{ref('Products_Dim_Mdl')}} p
-    --  on c.id = p.customer_id
-    --  join {{ref('Orders_Dim_Mdl')}} o
-    --  on c.id = o.customer_id
-    --  join {{ref('Customization_Dim_Mdl')}} cz
-    --  on  c.id=cz.customer_id
-    --  join {{ref('Inventory_Dim_Mdl')}} i
-    --  on 

@@ -37,3 +37,9 @@ models:
       +materialized: table
     PDL_Facts:
       +materialized: table
+
+
+snapshots:
+  Starbucks_dbt_project:
+    # This applies to all snapshots in your project
+    +quote_columns: true

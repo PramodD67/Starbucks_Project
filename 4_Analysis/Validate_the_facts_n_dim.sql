@@ -39,3 +39,15 @@ SELECT order_sk, customer_sk, product_sk, customization_sk, line_item_amount,inv
 FROM Starbucks_Fact
 GROUP BY order_sk, customer_sk, product_sk, customization_sk, line_item_amount,inventory_sk
 HAVING COUNT(*) > 1;
+
+
+
+  SELECT "id" FROM STARBUCKS_DB.BDL_SC."Customers_tbl" LIMIT 1;
+
+SELECT
+    t1.CUSTOMER_SK
+FROM STARBUCKS_FACT AS t1
+LEFT JOIN CUSTOMER_DIM_MDL AS t2
+    ON t1.CUSTOMER_SK = t2.CUSTOMER_SK
+WHERE t2.CUSTOMER_SK IS NULL
+  AND t1.CUSTOMER_SK IS NOT NULL; -- Exclude records where the FK is intentionally NULL

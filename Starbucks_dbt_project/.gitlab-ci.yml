@@ -1,0 +1,111 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+before_script:
+  - apt-get update && apt-get install -y python3 python3-pip python3-venv
+  - python3 -m venv venv
+  - source venv/bin/activate
+  - pip install --upgrade pip
+  - pip install dbt-snowflake
+
+  # ✅ Create the profiles.yml file dynamically
+  - mkdir -p ~/.dbt
+  - |
+    cat <<EOF > ~/.dbt/profiles.yml
+    Starbucks_dbt_project:
+      target: dev
+      outputs:
+        dev:
+          type: snowflake
+          account: ${DBT_ACCOUNT}
+          user: ${DBT_USER}
+          password: ${DBT_PASSWORD}
+          role: ${DBT_ROLE}
+          warehouse: ${DBT_WAREHOUSE}
+          database: ${DBT_DEV_DATABASE}
+          schema: ${DBT_DEV_SCHEMA}
+          threads: 4
+
+        prod:
+          type: snowflake
+          account: ${DBT_ACCOUNT}
+          user: ${DBT_USER}
+          password: ${DBT_PASSWORD}
+          role: ${DBT_ROLE}
+          warehouse: ${DBT_WAREHOUSE}
+          database: ${DBT_PROD_DB}
+          schema: ${DBT_PROD_SCHEMA}
+          threads: 4
+    EOF
+
+  - echo "✅ profiles.yml created:"
+
+
+# -----------------------
+# 🔨 Build Stage
+# -----------------------
+build:
+  stage: build
+  script:
+    - dbt deps
+    - dbt parse --profiles-dir ~/.dbt
+
+  only:
+    - main
+    - merge_requests
+
+
+# -----------------------
+# 🧪 Test Stage
+# -----------------------
+test:
+  stage: test
+  script:
+    - dbt deps
+    - dbt seed --full-refresh --profiles-dir ~/.dbt
+    - dbt run --target dev --profiles-dir ~/.dbt -v
+    - dbt test --target dev --profiles-dir ~/.dbt -v || exit 1
+    - |
+
+      if grep -q "FAIL" target/run_results.json; then
+        echo "❌ dbt tests failed. Stopping pipeline."
+        exit 1
+      else
+        echo "✅ All dbt tests passed successfully."
+      fi
+
+    
+  artifacts:
+    when: always
+    paths:
+      - target/
+      - logs/
+    expire_in: 1 week
+
+  only:
+    - main
+    - merge_requests
+
+
+# -----------------------
+# 🚀 Deploy Stage
+# -----------------------
+deploy:
+  stage: deploy
+  script:
+    - dbt deps
+    - dbt run --target prod --profiles-dir ~/.dbt -v
+    - dbt test --target prod --profiles-dir ~/.dbt -v || exit 1
+  artifacts:
+    when: always
+    paths:
+      - target/
+      - logs/
+
+  only:
+    - main

@@ -1,0 +1,80 @@
+models:
+  - name: Customer_Dim_Mdl
+    columns:
+      - name: CUSTOMER_ID
+        tests:
+          - not_null
+      - name: PHONE_NUMBER
+        tests: 
+          - not_null
+      - name: CUSTOMER_SK
+        tests:
+          - relationships:
+              arguments:
+                to: ref('Starbucks_Fact')
+                field: CUSTOMER_SK
+  
+
+  - name: Customization_Dim_Mdl
+    columns:
+      - name: CUSTOMIZATION_SK
+        tests: 
+          - relationships: 
+              arguments:
+                to: ref('Starbucks_Fact')
+                field: CUSTOMIZATION_SK
+
+      - name: MILK_TYPE
+        tests: 
+          - not_null
+
+      - name: SIZE
+        tests: 
+          - not_null
+      
+      - name: ADDINS
+        tests: 
+          - not_null
+
+  - name: Date_Dim_Mdl
+    columns: 
+      - name: DATE_SK
+        tests: 
+          - relationships:
+              arguments:
+                to: ref('Starbucks_Fact')
+                field: DATE_SK
+  
+  - name: Inventory_Dim_Mdl
+    columns: 
+      - name: INVENTORY_SK
+        tests:
+          - relationships:
+              arguments:
+                to: ref('Starbucks_Fact')
+                field: INVENTORY_SK
+  
+  - name: Orders_Dim_Mdl
+    columns: 
+      - name: ORDER_SK
+        tests:
+          - relationships:
+              arguments:
+                to: ref('Starbucks_Fact')
+                field: ORDER_SK
+  
+  - name: Products_Dim_Mdl
+    columns:
+      - name: PRODUCT_SK
+        tests: 
+          - relationships:
+              arguments:
+                to: ref('Starbucks_Fact')
+                field: PRODUCT_SK
+      
+
+       
+
+
+
+             

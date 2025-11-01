@@ -1,3 +1,8 @@
+
+create or replace task Customer_task 
+warehouse=compute_wh
+schedule= 'USING CRON 0 6 * * SAT Asia/Kolkata'
+as 
 merge into "Customers_tbl" as t
 using ( 
     
@@ -20,37 +25,64 @@ on t."id"=s."id"
 WHEN MATCHED THEN UPDATE ALL BY NAME
 WHEN NOT MATCHED THEN INSERT ALL BY NAME;
 
+desc task customer_task;
+
+alter task customer_task resume;
 desc table "Products_tbl";
 
 desc table STARBUCKS_DB.SDL_SC.products_tbl;
 
 desc table  STARBUCKS_DB.SDL_SC.CUSTOMERS_TBL;
-select * from STARBUCKS_DB.SDL_SC.products_tbl;
+select * from STARBUCKS_DB.BDL_SC."Customers_tbl";
 select * from "Products_tbl";
 --------------------------------------------
 
 
+
+create or replace task Products_task 
+warehouse=compute_wh
+schedule= 'USING CRON 0 6 * * SAT Asia/Kolkata'
+as 
 Merge into "Products_tbl" as t
-using ( select
+using ( select distinct 
 "id", 
-coalesce("Product_name", 'NA') AS "Product_name",
-"Description",
-coalesce("category", 'NA') AS "category" ,
+CASE
+    WHEN INITCAP( TRANSLATE(
+        REGEXP_REPLACE(TRIM("Product_name"), '[[:space:]\u00A0]+', ' '),
+        'ÁÀÄÂáàäâÉÈËÊéèëêÍÌÏÎíìïîÓÒÖÔóòöôÚÙÜÛúùüûÇçÑñ',
+        'AAAAaaaaEEEEeeeeIIIIiiiiOOOOooooUUUUuuuuCcNn'
+      )) IN ('Cappuchino', 'Cappuccino')
+         THEN 'Cappuccino'
+    ELSE INITCAP( TRANSLATE(
+        REGEXP_REPLACE(TRIM("Product_name"), '[[:space:]\u00A0]+', ' '),
+        'ÁÀÄÂáàäâÉÈËÊéèëêÍÌÏÎíìïîÓÒÖÔóòöôÚÙÜÛúùüûÇçÑñ',
+        'AAAAaaaaEEEEeeeeIIIIiiiiOOOOooooUUUUuuuuCcNn'
+      ))
+END AS "Product_name",
+coalesce( INITCAP( TRANSLATE(
+        REGEXP_REPLACE(TRIM("Description"), '[[:space:]\u00A0]+', ' '),
+        'ÁÀÄÂáàäâÉÈËÊéèëêÍÌÏÎíìïîÓÒÖÔóòöôÚÙÜÛúùüûÇçÑñ',
+        'AAAAaaaaEEEEeeeeIIIIiiiiOOOOooooUUUUuuuuCcNn'
+      )), 'NA')  as "Description",
+
+ coalesce(INITCAP( TRANSLATE(
+        REGEXP_REPLACE(TRIM("category"), '[[:space:]\u00A0]+', ' '),
+        'ÁÀÄÂáàäâÉÈËÊéèëêÍÌÏÎíìïîÓÒÖÔóòöôÚÙÜÛúùüûÇçÑñ',
+        'AAAAaaaaEEEEeeeeIIIIiiiiOOOOooooUUUUuuuuCcNn'
+      )), 'NA')  as "category",
 coalesce(regexp_replace(split_part(to_char("Price"),'.',1),'[^0-9]', '')
 ||'.' || split_part(to_char("Price"),'.',2), 00.00)  as "Price"
 
 from STARBUCKS_DB.SDL_SC.products_tbl 
 )  as s
-
 on t."id" = s."id"
-
 WHEN MATCHED THEN UPDATE ALL BY NAME
 
 WHEN NOT MATCHED THEN INSERT ALL BY NAME;
 ------------------------------------------------------
+TRUNCATE table STARBUCKS_DB.BDL_SC."Products_tbl";
 
-
-desc table "Orders_tbl" ;
+desc table  STARBUCKS_DB.SDL_SC.products_tbl  ;
 
 alter table "Orders_tbl" add column  "orders_total" float;
 
@@ -175,3 +207,15 @@ WHEN NOT MATCHED THEN INSERT ALL BY NAME;
 -- orders_total → default numeric formatting.
 -- Order_date → default timestamp.
 -- Phone Formatting: special regex to format as XXX-XXXX.
+
+
+delete from  STARBUCKS_DB.BDL_SC."Products_tbl"
+ where "id" in ( 
+   select "id" from ( 
+select 
+"id",
+row_number() over(partition by "Product_name","Description","category",
+"Price" order by "Product_name") as rn
+from STARBUCKS_DB.BDL_SC."Products_tbl"
+qualify rn>1));
+

@@ -1,0 +1,51 @@
+id,Milk_Type,Size,Add-ins,Product_id,Customer_id
+3001,oat milk,Large,Extra Shot,101,1
+3002,Whole Milk,medium,None,102,3
+3003,None,Large,,103,5
+3004,None,Medium,Lemon Slice,104,7
+3005,Almond Milk,Small,Vanilla Syrup,105,9
+3006,,N/A,None,106,2
+3007,None,N/A,None,107,4
+3008,Soy Milk,Medium,Caramel Drizzle,101,6
+3009,Whole Milk,Large,None,102,8
+3010,None,Medium,Whipped Cream,109,10
+3011,Oat Milk,Small,Cinnamon,101,11
+3012,Whole Milk,Large,None,103,13
+3013,None,n/a,None,110,15
+3014,Almond Milk,Medium,Honey,105,17
+3015,Whole Milk,Large,Extra Shot,101,19
+3016,,N/A,None,106,2
+3017,None,N/A,None,107,4
+3018,Soy Milk,Medium,Mocha Syrup,102,6
+3019,Whole Milk,Small,None,109,8
+3020,None,Medium,Mint,104,10
+3021,Oat Milk,Large,None,101,21
+3022,Whole Milk,Medium,None,107,23
+3023,None,N/A,None,110,25
+3024,None,Large,Extra Shot,108,27
+3025,Almond Milk,Small,Vanilla Syrup,102,29
+3026,None,Large,None,103,31
+3027,Soy Milk,Medium,None,104,33
+3028,Oat Milk,Large,Caramel Drizzle,101,35
+3029,None,Medium,None,106,37
+3030,Whole Milk,Small,None,107,39
+3031,Almond Milk,Large,None,102,41
+3032,None,N/A,None,107,43
+3033,None,Large,None,103,45
+3034,Soy Milk,Medium,None,105,47
+3035,Oat Milk,Small,Extra Shot,101,49
+3036,None,N/A,None,111,1
+3037,Whole Milk,Large,None,119,3
+3038,None,Medium,Lemon Slice,117,5
+3039,Almond Milk,Small,Vanilla Syrup,115,7
+3040,None,Large,None,120,9
+3041,Soy Milk,Medium,None,121,11
+3042,Oat Milk,Large,Caramel Drizzle,122,13
+3043,None,N/A,None,123,15
+3044,Whole Milk,Small,None,124,17
+3045,Almond Milk,Medium,Honey,125,19
+3046,None,Large,None,103,21
+3047,Soy Milk,Small,None,104,23
+3048,Oat Milk,Medium,Extra Shot,101,25
+3049,None,N/A,None,110,27
+3050,Whole Milk,Large,Whipped Cream,109,29
