@@ -31,7 +31,7 @@ before_script:
           schema: ${DBT_DEV_SCHEMA}
           threads: 4
 
-        prod:
+        dev:
           type: snowflake
           account: ${DBT_ACCOUNT}
           user: ${DBT_USER}
