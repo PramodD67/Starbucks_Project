@@ -14,7 +14,6 @@ PROBLEM STATEMENT:
 	4. The system needs to track inventory for popular items
 	5. Daily sales reports should be easy to generate
 	
-	From <https://code.datavidhya.com/data-modeling/starbucks-order-system> 
 
   Solution Developed:
 
